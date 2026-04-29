@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Uzima Design System
+   Faith-centered, peaceful, nourishing.
+   All colors HSL. Sage greens, warm cream, terracotta accents.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 40 38% 96%;          /* warm cream */
+    --foreground: 140 18% 14%;         /* deep forest ink */
+
+    --card: 40 50% 98%;
+    --card-foreground: 140 18% 14%;
+
+    --popover: 40 50% 98%;
+    --popover-foreground: 140 18% 14%;
+
+    /* Brand: deep sage */
+    --primary: 140 28% 26%;
+    --primary-foreground: 40 50% 97%;
+    --primary-glow: 140 30% 40%;
+
+    /* Secondary: soft moss */
+    --secondary: 90 22% 88%;
+    --secondary-foreground: 140 28% 22%;
+
+    --muted: 40 25% 91%;
+    --muted-foreground: 140 10% 38%;
+
+    /* Accent: warm terracotta */
+    --accent: 18 55% 55%;
+    --accent-foreground: 40 50% 97%;
+
+    /* Gold for highlights / verses */
+    --gold: 38 65% 52%;
+    --gold-foreground: 140 28% 18%;
+
+    --destructive: 0 70% 48%;
+    --destructive-foreground: 40 50% 97%;
+
+    --border: 40 20% 86%;
+    --input: 40 20% 86%;
+    --ring: 140 28% 30%;
+
+    --radius: 0.875rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(140 28% 22%) 0%, hsl(140 30% 35%) 60%, hsl(90 22% 55%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40 38% 96%) 0%, hsl(40 30% 92%) 100%);
+    --gradient-verse: linear-gradient(135deg, hsl(40 50% 96%) 0%, hsl(90 22% 92%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 24px -8px hsl(140 28% 22% / 0.12);
+    --shadow-warm: 0 20px 50px -20px hsl(140 28% 22% / 0.25);
+    --shadow-card: 0 1px 3px hsl(140 18% 14% / 0.04), 0 8px 24px -12px hsl(140 18% 14% / 0.08);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 40 38% 96%;
+    --sidebar-foreground: 140 18% 14%;
+    --sidebar-primary: 140 28% 26%;
+    --sidebar-primary-foreground: 40 50% 97%;
+    --sidebar-accent: 90 22% 88%;
+    --sidebar-accent-foreground: 140 28% 22%;
+    --sidebar-border: 40 20% 86%;
+    --sidebar-ring: 140 28% 30%;
+  }
+
+  .dark {
+    --background: 140 18% 8%;
+    --foreground: 40 38% 94%;
+    --card: 140 18% 11%;
+    --card-foreground: 40 38% 94%;
+    --popover: 140 18% 11%;
+    --popover-foreground: 40 38% 94%;
+    --primary: 90 35% 70%;
+    --primary-foreground: 140 28% 12%;
+    --primary-glow: 90 35% 60%;
+    --secondary: 140 18% 16%;
+    --secondary-foreground: 40 38% 94%;
+    --muted: 140 18% 14%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 18 55% 60%;
+    --accent-foreground: 40 50% 97%;
+    --gold: 38 65% 60%;
+    --gold-foreground: 140 28% 12%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 50% 97%;
+    --border: 140 18% 18%;
+    --input: 140 18% 18%;
+    --ring: 90 35% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .bg-gradient-verse {
+    background: var(--gradient-verse);
+  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
